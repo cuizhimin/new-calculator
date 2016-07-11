@@ -225,7 +225,35 @@ class ViewController: UIViewController{
             break;
         }
     }
-      
+    
+    @IBAction func percent(sender: AnyObject) {
+        var percent:Double=0;
+        var percent1:Double=0;
+        var percent2:Int=0;
+        percent=((Text.text)! as NSString).doubleValue;
+        percent1=percent/100;
+        if(percent1%1==0)
+        {
+            percent2=Int(percent1);
+            Text.text="\(percent2)";
+        }
+        else
+        {
+            Text.text="\(percent1)";
+        }
+    
+    }
+    
+    @IBAction func back(sender: AnyObject) {
+        var str=Text.text!
+        if str != ""{
+            str.removeAtIndex(str.endIndex.predecessor())
+            Text.text=str
+        }
+        else{
+            Text.text="0"
+        }
+    }
     @IBAction func point(sender: AnyObject) {
         if(judgepoint==false)
         {
